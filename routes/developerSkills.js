@@ -3,6 +3,6 @@ var router = express.Router();
 var developerSkillsController = require('../controllers/developerSkillsController');
 
 router.get('/', developerSkillsController.getAllSkills);
-router.get('/:id', developerSkillsController.getSkillById);
+router.get('/eachSkill/:id', developerSkillsController.getSkillById);
 
 module.exports = router;

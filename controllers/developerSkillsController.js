@@ -1,16 +1,16 @@
-const developerSkills = require('../models/developerSkills');
+const DeveloperSkills = require('../models/developerSkill');
 
-function getAllSkills(req, res) {
-    const allSkills = developerSkillsModel.getAllSkills();
-    res.render('skills/index', { skills: allSkills });
-  };
+module.exports = {
+  getAllSkills(req, res) {
+    res.render('skills/index', { skills: DeveloperSkills.getAllSkills() });
+  },
   
-  function getSkillById(req, res) {
+  getSkillById(req, res) {
     const skillId = parseInt(req.params.id);
-    const skill = developerSkillsModel.getSkillById(skillId);
-    res.render('skills/eachSkill', { skill });
-  };
-  
+    res.render('skills/show', { skill: DeveloperSkills.getSkillById(skillId) });
+  },
+};
+
   module.exports = {
     getAllSkills,
     getSkillById,
