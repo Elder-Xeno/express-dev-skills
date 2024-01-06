@@ -8,7 +8,7 @@ function getAllSkills(req, res) {
   function getSkillById(req, res) {
     const skillId = parseInt(req.params.id);
     const skill = developerSkillsModel.getSkillById(skillId);
-    res.render('skills/show', { skill });
+    res.render('skills/eachSkill', { skill });
   };
   
   module.exports = {
