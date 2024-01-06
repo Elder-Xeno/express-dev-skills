@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= skill.name %></title>
+</head>
+<body>
+  <h1><%= skill.name %></h1>
+  <p>Status: <%= skill.status %></p>
+  <p>Resources:</p>
+  <ul>
+    <% skill.resources.forEach(resource => { %>
+      <li><a href="<%= resource %>"><%= resource %></a></li>
+    <% }); %>
+  </ul>
+  <p>Deadline: <%= skill.deadline %></p>
+</body>
+</html>
