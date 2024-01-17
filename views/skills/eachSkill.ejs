@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= skill.name %></title>
-</head>
-<body>
-  <h1><%= skill.name %></h1>
+<%- include("../partials/layout", { pageTitle: "Individual Developer Skill", heading: skill.name }) %>
+
+<% if (skill) { %>
   <p>Status: <%= skill.status %></p>
   <p>Resources:</p>
   <ul>
     <% skill.resources.forEach(resource => { %>
-      <li><a href="<%= resource %>"><%= resource %></a></li>
+    <li><a href="<%= resource %>"><%= resource %></a></li>
     <% }); %>
   </ul>
   <p>Deadline: <%= skill.deadline %></p>
-</body>
-</html>
+
+  <form action="/developerSkills/<%= skill.id %>?_method=DELETE" method="POST">
+    <button type="submit" class="delete-button">Delete Skill</button>
+  </form>
+<% } %>
+
+<a href="/developerSkills/<%= skill.id %>/edit" class="edit-link">Edit Skill</a>
+<a href="/developerSkills" class="go-back">Go back to Developer Skills</a>

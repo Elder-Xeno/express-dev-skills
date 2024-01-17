@@ -1,0 +1,22 @@
+<%- include("../partials/layout", { pageTitle: "Edit Developer Skill", heading: "Edit Developer Skill" }) %>
+
+<form action="/developerSkills/<%= skill.id %>?_method=PUT" method="POST">
+        <label for="name">Skill Name:</label>
+        <input type="text" id="name" name="name" value="<%= skill.name %>" required>
+
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Beginner" <%= skill.status === 'Beginner' ? 'selected' : '' %>>Beginner</option>
+            <option value="Intermediate" <%= skill.status === 'Intermediate' ? 'selected' : '' %>>Intermediate</option>
+            <option value="Proficient" <%= skill.status === 'Proficient' ? 'selected' : '' %>>Proficient</option>
+        </select>
+        <label for="resources">Resources:</label>
+        <input type="text" id="resources" name="resources" value="<%= skill.resources.join(', ') %>" required>
+
+        <label for="deadline">Deadline:</label>
+        <input type="date" id="deadline" name="deadline" value="<%= skill.deadline %>" required>
+        
+        <button type="submit">Save Changes</button>
+    </form>
+    
+    <a href="/developerSkills/<%= skill.id %>" class="go-back">Cancel</a>

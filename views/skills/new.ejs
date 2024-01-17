@@ -1,0 +1,23 @@
+<%- include("../partials/layout", { pageTitle: "Add New Skill", heading: "Add New Skill" }) %>
+
+<form action="/developerSkills" method="post">
+        <label for="name">Skill Name:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="status">Status:</label>
+        <select id="status" name="status" required>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Proficient">Proficient</option>
+        </select>
+        
+        <label for="resources">Resources:</label>
+        <input type="text" id="resources" name="resources" required>
+        
+        <label for="deadline">Deadline:</label>
+        <input type="date" id="deadline" name="deadline" required>
+        
+        <button type="submit">Add Skill</button>
+</form>
+
+<a href="/developerSkills" class="goBack">Go back to Developer Skills</a>
