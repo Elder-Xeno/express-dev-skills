@@ -26,7 +26,7 @@ The Developer Skills App is a web application that allows developers to manage a
 - **JavaScript**
 - **EJS**
 - **Node.js**
-- **Express.js**
+- **Express**
 
 ## Next Steps
 
